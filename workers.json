@@ -3,12 +3,5 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "types": [ "@cloudflare/workers-types/experimental" ]
-  },
-  "include": [
-    "${configDir}/src/**/*.ts",
-    "${configDir}/src/**/*.tsx",
-    "${configDir}/e2e/**/*.ts",
-    "${configDir}/test/**/*.ts",
-    "${configDir}/*.ts"
-  ]
+  }
 }

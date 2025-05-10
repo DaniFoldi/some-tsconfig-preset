@@ -6,13 +6,6 @@
     "declaration": false,
     "jsx": "react-jsx",
     "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
-    "target": "ES5"
-  },
-  "include": [
-    "${configDir}/src/**/*.ts",
-    "${configDir}/src/**/*.tsx",
-    "${configDir}/e2e/**/*.ts",
-    "${configDir}/test/**/*.ts",
-    "${configDir}/*.ts"
-  ]
+    "target": "ES2017"
+  }
 }

@@ -23,6 +23,10 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUncheckedIndexedAccess": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./src/*"],
+    },
     "preserveConstEnums": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -35,5 +39,12 @@
     "useDefineForClassFields": true,
     "useUnknownInCatchVariables": true,
     "verbatimModuleSyntax": true
-  }
+  },
+  "include": [
+    "${configDir}/src/**/*",
+    "${configDir}/e2e/**/*.ts",
+    "${configDir}/scripts/**/*.ts",
+    "${configDir}/test/**/*.ts",
+    "${configDir}/*.ts"
+  ]
 }
