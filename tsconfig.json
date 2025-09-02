@@ -24,6 +24,7 @@
     "noImplicitThis": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
+      "#/*": ["./src/*"],
       "@/*": ["./src/*"],
       "~/*": ["./src/*"],
     },
