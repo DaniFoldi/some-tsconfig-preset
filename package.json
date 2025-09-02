@@ -12,7 +12,7 @@
   "author": "DaniFoldi",
   "license": "MIT",
   "peerDependencies": {
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "packageManager": "pnpm@10.15.0"
 }
