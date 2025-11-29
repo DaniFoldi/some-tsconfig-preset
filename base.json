@@ -8,7 +8,6 @@
     "alwaysStrict": true,
     "baseUrl": "${configDir}",
     "composite": true,
-    "declaration": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
