@@ -2,5 +2,6 @@
   "references": [{
     "path": "./tsconfig.node.json"
   }],
+  "extends": "some-tsconfig-preset/global.json",
   "files": []
 }

@@ -6,5 +6,6 @@
   }, {
     "path": "./tsconfig.scripts.json"
   }],
+  "extends": "some-tsconfig-preset/global.json",
   "files": []
 }
