@@ -1,6 +1,6 @@
 {
   "name": "some-tsconfig-preset",
-  "version": "1.9.0",
+  "version": "1.10.0-beta.0",
   "description": "",
   "main": "tsconfig.json",
   "scripts": {},
@@ -8,6 +8,15 @@
     "tsconfig preset",
     "strict tsconfig preset",
     "tsconfig base"
+  ],
+  "files": [
+    "node.json",
+    "react.json",
+    "react-native.json",
+    "tsconfig.json",
+    "workers.json",
+    "includes",
+    "rulesets"
   ],
   "author": "DaniFoldi",
   "license": "MIT",

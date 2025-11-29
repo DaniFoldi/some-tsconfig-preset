@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "files": [],
     "references": [
-      { "path": "./includes/react.json" },
+      { "path": "./includes/react-native.json" },
       { "path": "./includes/scripts.json" }
     ]
 }

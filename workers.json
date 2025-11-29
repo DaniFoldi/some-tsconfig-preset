@@ -1,7 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig",
-  "compilerOptions": {
-    "types": [ "@cloudflare/workers-types/experimental" ]
-  }
+  "files": [],
+    "references": [
+      { "path": "./includes/workers.json" },
+      { "path": "./includes/workers-vitest.json" },
+      { "path": "./includes/scripts.json" }
+    ]
 }
