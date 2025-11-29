@@ -1,8 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "files": [],
-    "references": [
-      { "path": "./includes/react.json" },
-      { "path": "./includes/scripts.json" }
-    ]
+  "extends": "./base.json",
+  "compilerOptions": {
+    "composite": false,
+    "declaration": false,
+    "jsx": "react-jsx",
+    "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
+    "target": "ES2017",
+    "types": [ "react", "react-dom", "vite/client" ]
+  }
 }

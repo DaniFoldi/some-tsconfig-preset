@@ -1,8 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "files": [],
-    "references": [
-      { "path": "./includes/react-native.json" },
-      { "path": "./includes/scripts.json" }
-    ]
+  "extends": "./base.json",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["DOM", "ESNext"],
+    "module": "preserve",
+    "moduleDetection": "force",
+    "customConditions": ["react-native"],
+    "target": "ESNext"
+  }
 }

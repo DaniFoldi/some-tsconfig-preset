@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "../rulesets/react-native.json",
+  "extends": "some-tsconfig-preset/react-native.json",
   "include": [
     "${configDir}/e2e",
     "${configDir}/src",

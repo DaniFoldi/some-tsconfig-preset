@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "../rulesets/workers.json",
+  "extends": "some-tsconfig-preset/workers.json",
   "include": [
     "${configDir}/src"
   ]
