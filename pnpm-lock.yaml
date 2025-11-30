@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       detect-package-manager:
-        specifier: ^2.0.1
-        version: 2.0.1
+        specifier: ^3.0.2
+        version: 3.0.2
       picocolors:
         specifier: ^1.1.1
         version: 1.1.1
@@ -838,8 +838,8 @@ packages:
     resolution: {integrity: sha512-qE3Veg1YXzGHQhlA6jzebZN2qVf6NX+A7m7qlhCGG30dJixrAQhYOsJjsnBjJkCSmuOPpCk30145fr8FV0bzog==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  detect-package-manager@2.0.1:
-    resolution: {integrity: sha512-j/lJHyoLlWi6G1LDdLgvUtz60Zo5GEj+sVYtTVXnYLDPuzgC3llMxonXym9zIwhhUII8vjdw0LXxavpLqTbl1A==}
+  detect-package-manager@3.0.2:
+    resolution: {integrity: sha512-8JFjJHutStYrfWwzfretQoyNGoZVW1Fsrp4JO9spa7h/fBfwgTMEIy4/LBzRDGsxwVPHU0q+T9YvwLDJoOApLQ==}
     engines: {node: '>=12'}
 
   diff-sequences@27.5.1:
@@ -2936,7 +2936,7 @@ snapshots:
 
   detect-newline@4.0.1: {}
 
-  detect-package-manager@2.0.1:
+  detect-package-manager@3.0.2:
     dependencies:
       execa: 5.1.1
 
