@@ -6,6 +6,7 @@ import { spawn } from "node:child_process"
 import pc from "picocolors"
 import prompts from "prompts"
 import { detect } from "detect-package-manager"
+import semver from "semver"
 
 type PackageJson = {
   dependencies?: Record<string, string>
@@ -167,38 +168,47 @@ async function ensureDevDependencies(
   pm: string,
   yes: boolean,
 ) {
-  const missing: Array<{ name: string; version: string }> = []
+  const toInstall: Array<{ name: string; version: string }> = []
 
   const tsRange = await getPeerTypescriptRange()
 
   const hasTs =
     (pkg.devDependencies && pkg.devDependencies.typescript) ||
     (pkg.dependencies && pkg.dependencies.typescript)
-  if (!hasTs) missing.push({ name: "typescript", version: tsRange })
+  if (!hasTs) {
+    toInstall.push({ name: "typescript", version: tsRange })
+  }
 
   const hasPreset =
     (pkg.devDependencies && pkg.devDependencies[PACKAGE_NAME]) ||
     (pkg.dependencies && pkg.dependencies[PACKAGE_NAME])
+  const currentPresetVersion = await getCurrentPackageVersion()
+  const presetSpec = currentPresetVersion ? `^${currentPresetVersion}` : "latest"
   if (!hasPreset) {
-    const major = pkg.version?.match(/^(\d+)\./)?.[1]
-    const version = major ? `^${major}.0.0` : "latest"
-    missing.push({ name: PACKAGE_NAME, version })
+    toInstall.push({ name: PACKAGE_NAME, version: presetSpec })
+  } else if (currentPresetVersion) {
+    const existingRange =
+      pkg.devDependencies?.[PACKAGE_NAME] ?? pkg.dependencies?.[PACKAGE_NAME]
+    const existingMin = existingRange ? semver.minVersion(existingRange) : null
+    if (existingMin && semver.lt(existingMin, currentPresetVersion)) {
+      toInstall.push({ name: PACKAGE_NAME, version: presetSpec })
+    }
   }
 
-  if (missing.length === 0) return
+  if (toInstall.length === 0) return
 
-  const list = missing.map((m) => `${m.name}@${m.version}`).join(", ")
+  const list = toInstall.map((m) => `${m.name}@${m.version}`).join(", ")
   if (!yes) {
     const result = await prompts({
       type: "confirm",
       name: "confirm",
-      message: `Add devDependencies (${list}) using ${pm}?`,
+      message: `Install devDependencies (${list}) using ${pm}?`,
       initial: true,
     })
     if (!result.confirm) return
   }
 
-  const specs = missing.map((m) => `${m.name}@${m.version}`)
+  const specs = toInstall.map((m) => `${m.name}@${m.version}`)
   const [cmd, ...args] = buildInstallCommand(pm, specs)
   console.log(pc.dim(`Installing devDependencies with ${cmd} ${args.join(" ")}`))
   await runInstall(cmd, args)
@@ -207,11 +217,11 @@ async function ensureDevDependencies(
 
 async function ensureTypecheckScript(pkg: PackageJson, pkgPath: string) {
   const scripts = pkg.scripts ?? {}
-  if (scripts.typecheck === "tsc -b") return
+  if (scripts.typecheck === "tsc -b --noEmit") return
 
-  let message = 'Add package.json script "typecheck": "tsc -b"?'
-  if (scripts.typecheck && scripts.typecheck !== "tsc -b") {
-    message = `Replace existing "typecheck" script (${scripts.typecheck}) with "tsc -b"?`
+  let message = 'Add package.json script "typecheck": "tsc -b --noEmit"?'
+  if (scripts.typecheck && scripts.typecheck !== "tsc -b --noEmit") {
+    message = `Replace existing "typecheck" script (${scripts.typecheck}) with "tsc -b --noEmit"?`
   }
 
   const result = await prompts({
@@ -222,9 +232,9 @@ async function ensureTypecheckScript(pkg: PackageJson, pkgPath: string) {
   })
   if (!result.confirm) return
 
-  pkg.scripts = { ...scripts, typecheck: "tsc -b" }
+  pkg.scripts = { ...scripts, typecheck: "tsc -b --noEmit" }
   await writePackageJson(pkgPath, pkg)
-  logStep('Set script "typecheck": "tsc -b"', "ok")
+  logStep('Set script "typecheck": "tsc -b --noEmit"', "ok")
 }
 
 function presetDescription(preset: PresetName) {
@@ -315,6 +325,20 @@ async function getPeerTypescriptRange() {
     // ignore and fall back
   }
   return FALLBACK_TYPESCRIPT_RANGE
+}
+
+async function getCurrentPackageVersion(): Promise<string | null> {
+  const pkgPath = path.resolve(__dirname, "..", "package.json")
+  try {
+    const raw = await fs.readFile(pkgPath, "utf8")
+    const parsed = JSON.parse(raw) as PackageJson
+    if (parsed.version && semver.valid(parsed.version)) {
+      return parsed.version
+    }
+  } catch {
+    // ignore
+  }
+  return null
 }
 
 void main()

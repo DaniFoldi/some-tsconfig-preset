@@ -1,13 +1,13 @@
 {
   "name": "some-tsconfig-preset",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "main": "tsconfig.json",
   "type": "module",
   "scripts": {
     "build": "esbuild scripts/init.ts --bundle --platform=node --format=esm --outdir=dist --entry-names=cli --packages=external --banner:js='#!/usr/bin/env node' --log-level=info",
     "prepublishOnly": "pnpm run build",
     "lint": "eslint --cache .",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b --noEmit"
   },
   "keywords": [
     "tsconfig preset",
@@ -20,6 +20,7 @@
     "react.json",
     "react-native.json",
     "workers.json",
+    "workers-vitest.json",
     "presets",
     "dist",
     "global.json"
@@ -35,7 +36,8 @@
   "dependencies": {
     "detect-package-manager": "^2.0.1",
     "picocolors": "^1.1.1",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "semver": "^7.6.3"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

@@ -17,6 +17,9 @@ importers:
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
+      semver:
+        specifier: ^7.6.3
+        version: 7.7.3
     devDependencies:
       '@types/node':
         specifier: ^24.10.1
