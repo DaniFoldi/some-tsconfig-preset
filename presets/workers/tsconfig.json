@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "references": [{
     "path": "./tsconfig.workers.json"
   }, {
@@ -6,5 +7,6 @@
   }, {
     "path": "./tsconfig.scripts.json"
   }],
-  "files": []
+  "files": [],
+  "include": []
 }

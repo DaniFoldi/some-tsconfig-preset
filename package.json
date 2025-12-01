@@ -1,7 +1,7 @@
 {
   "name": "some-tsconfig-preset",
-  "version": "2.0.7",
-  "main": "tsconfig.json",
+  "version": "2.0.8",
+  "main": "base.json",
   "type": "module",
   "scripts": {
     "build": "esbuild scripts/init.ts --bundle --platform=node --format=esm --outdir=dist --entry-names=cli --packages=external --banner:js='#!/usr/bin/env node' --log-level=info",
@@ -22,8 +22,7 @@
     "workers.json",
     "workers-vitest.json",
     "presets",
-    "dist",
-    "global.json"
+    "dist"
   ],
   "bin": {
     "some-tsconfig-preset": "./dist/cli.js"
@@ -34,17 +33,17 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "detect-package-manager": "^2.0.1",
+    "detect-package-manager": "^3.0.2",
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2",
-    "semver": "^7.6.3"
+    "semver": "^7.4.3"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "bundled-eslint-config": "^0.6.7",
-    "esbuild": "^0.27.0",
-    "eslint": "^9.39.1",
-    "typescript": "^5.9.3"
+    "@types/node": "24.10.1",
+    "bundled-eslint-config": "0.6.7",
+    "esbuild": "0.27.0",
+    "eslint": "9.39.1",
+    "typescript": "5.9.3"
   },
-  "packageManager": "pnpm@10.23.0"
+  "packageManager": "pnpm@10.24.0"
 }
