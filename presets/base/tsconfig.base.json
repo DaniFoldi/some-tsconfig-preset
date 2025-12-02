@@ -6,6 +6,6 @@
     "${configDir}/scripts",
     "${configDir}/src",
     "${configDir}/test",
-    "${configDir}/*.ts",
+    "${configDir}/*.ts"
   ]
 }
