@@ -20,7 +20,7 @@ importers:
         specifier: ^2.4.2
         version: 2.4.2
       semver:
-        specifier: ^7.4.3
+        specifier: ^7.7.3
         version: 7.7.3
     devDependencies:
       '@changesets/cli':

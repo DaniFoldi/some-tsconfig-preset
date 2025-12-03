@@ -36,7 +36,7 @@
     "detect-package-manager": "^3.0.2",
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2",
-    "semver": "^7.4.3"
+    "semver": "^7.7.3"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.10",
