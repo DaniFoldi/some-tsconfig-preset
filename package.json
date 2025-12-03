@@ -8,6 +8,10 @@
   ],
   "license": "MIT",
   "author": "DaniFoldi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DaniFoldi/some-tsconfig-preset"
+  },
   "type": "module",
   "main": "base.json",
   "bin": {
