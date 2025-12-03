@@ -6,12 +6,12 @@
     "strict tsconfig preset",
     "tsconfig base"
   ],
-  "license": "MIT",
-  "author": "DaniFoldi",
   "repository": {
     "type": "git",
     "url": "https://github.com/DaniFoldi/some-tsconfig-preset"
   },
+  "license": "MIT",
+  "author": "DaniFoldi",
   "type": "module",
   "main": "base.json",
   "bin": {
