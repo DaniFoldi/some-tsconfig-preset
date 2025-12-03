@@ -1,9 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "some-tsconfig-preset/react.json",
-  "include": [
-    "${configDir}/e2e",
-    "${configDir}/src",
-    "${configDir}/test"
-  ]
-}

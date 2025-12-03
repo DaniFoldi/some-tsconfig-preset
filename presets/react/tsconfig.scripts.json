@@ -1,8 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "some-tsconfig-preset/scripts.json",
-  "include": [
-    "${configDir}/scripts",
-    "${configDir}/*.ts"
-  ]
-}

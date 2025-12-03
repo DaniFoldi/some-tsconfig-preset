@@ -1,19 +1,18 @@
 {
   "name": "some-tsconfig-preset",
   "version": "2.1.0",
-  "main": "base.json",
-  "type": "module",
-  "scripts": {
-    "build": "esbuild scripts/init.ts --bundle --platform=node --format=esm --outdir=dist --entry-names=cli --packages=external --banner:js='#!/usr/bin/env node' --log-level=info",
-    "prepublishOnly": "pnpm run build",
-    "lint": "eslint --cache .",
-    "typecheck": "tsc -b --noEmit"
-  },
   "keywords": [
     "tsconfig preset",
     "strict tsconfig preset",
     "tsconfig base"
   ],
+  "license": "MIT",
+  "author": "DaniFoldi",
+  "type": "module",
+  "main": "base.json",
+  "bin": {
+    "some-tsconfig-preset": "./dist/cli.js"
+  },
   "files": [
     "base.json",
     "node.json",
@@ -25,13 +24,13 @@
     "presets",
     "dist"
   ],
-  "bin": {
-    "some-tsconfig-preset": "./dist/cli.js"
-  },
-  "author": "DaniFoldi",
-  "license": "MIT",
-  "peerDependencies": {
-    "typescript": "^5.9.3"
+  "scripts": {
+    "build": "esbuild scripts/init.ts --bundle --platform=node --format=esm --outdir=dist --entry-names=cli --packages=external --banner:js='#!/usr/bin/env node' --log-level=info",
+    "lint": "eslint --cache .",
+    "prepublishOnly": "pnpm run build",
+    "release": "changeset publish",
+    "typecheck": "tsc",
+    "version-packages": "changeset version"
   },
   "dependencies": {
     "detect-package-manager": "^3.0.2",
@@ -40,11 +39,17 @@
     "semver": "^7.4.3"
   },
   "devDependencies": {
+    "@changesets/cli": "2.27.10",
     "@types/node": "24.10.1",
-    "bundled-eslint-config": "0.6.7",
+    "@types/prompts": "2.4.9",
+    "@types/semver": "7.7.1",
+    "bundled-eslint-config": "0.7.1",
     "esbuild": "0.27.0",
     "eslint": "9.39.1",
     "typescript": "5.9.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.24.0"
 }

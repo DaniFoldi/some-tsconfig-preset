@@ -1,12 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "references": [{
-    "path": "./tsconfig.workers.json"
-  }, {
-    "path": "./tsconfig.workers-vitest.json"
-  }, {
-    "path": "./tsconfig.scripts.json"
-  }],
-  "files": [],
-  "include": []
+  "extends": "some-tsconfig-preset/workers.json",
+  "include": [
+    "${configDir}/src/**/*",
+    "${configDir}/e2e/**/*",
+    "${configDir}/scripts/**/*",
+    "${configDir}/test/**/*",
+    "${configDir}/*.ts"
+  ]
 }
