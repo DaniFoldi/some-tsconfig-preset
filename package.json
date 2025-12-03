@@ -39,11 +39,12 @@
     "semver": "^7.7.3"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "0.5.2",
     "@changesets/cli": "2.27.10",
     "@types/node": "24.10.1",
     "@types/prompts": "2.4.9",
     "@types/semver": "7.7.1",
-    "bundled-eslint-config": "0.7.1",
+    "bundled-eslint-config": "0.7.2",
     "esbuild": "0.27.0",
     "eslint": "9.39.1",
     "typescript": "5.9.3"

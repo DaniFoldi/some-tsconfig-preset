@@ -2,7 +2,4 @@ ignoredBuiltDependencies:
   - esbuild
   - unrs-resolver
 
-packageExtensions:
-  eslint-plugin-import-x:
-    peerDependencies:
-      eslint-import-resolver-node: '*'
+saveExact: true
