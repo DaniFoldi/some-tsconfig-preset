@@ -49,7 +49,7 @@
     "@types/prompts": "2.4.9",
     "@types/semver": "7.7.1",
     "bundled-eslint-config": "0.7.2",
-    "esbuild": "0.27.0",
+    "esbuild": "0.27.1",
     "eslint": "9.39.1",
     "typescript": "5.9.3"
   },
