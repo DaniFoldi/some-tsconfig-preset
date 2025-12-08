@@ -37,8 +37,8 @@ importers:
         specifier: 7.7.1
         version: 7.7.1
       bundled-eslint-config:
-        specifier: 0.7.2
-        version: 0.7.2(@types/estree@1.0.8)(@typescript-eslint/parser@8.48.1(eslint@9.39.1)(typescript@5.9.3))(@typescript-eslint/utils@8.48.1(eslint@9.39.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1)(typescript@5.9.3)
+        specifier: 0.7.3
+        version: 0.7.3(@types/estree@1.0.8)(@typescript-eslint/parser@8.48.1(eslint@9.39.1)(typescript@5.9.3))(@typescript-eslint/utils@8.48.1(eslint@9.39.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1)(typescript@5.9.3)
       esbuild:
         specifier: 0.27.1
         version: 0.27.1
@@ -839,8 +839,8 @@ packages:
     resolution: {integrity: sha512-bkXY9WsVpY7CvMhKSR6pZilZu9Ln5WDrKVBUXf2S443etkmEO4V58heTecXcUIsNsi4Rx8JUO4NfX1IcQl4deg==}
     engines: {node: '>=18.20'}
 
-  bundled-eslint-config@0.7.2:
-    resolution: {integrity: sha512-PMdv724ZQr707BVbhFKAJOOa+UrvH1hjV4jV0KWPd4/6EK3e+LrH/jIZxGBa2ws6Rj0+8LjkqcYTvVm0T/UiXA==}
+  bundled-eslint-config@0.7.3:
+    resolution: {integrity: sha512-mtGjEvWQLdNV65NoT7Z/chphGzaAjezNLNN+WOLFTTunpQ631z0vnu+h2qI8c81Q8iYUL5JB88nRNiYQDo+JCA==}
     peerDependencies:
       eslint: ^9.39.1
 
@@ -3316,7 +3316,7 @@ snapshots:
 
   builtin-modules@5.0.0: {}
 
-  bundled-eslint-config@0.7.2(@types/estree@1.0.8)(@typescript-eslint/parser@8.48.1(eslint@9.39.1)(typescript@5.9.3))(@typescript-eslint/utils@8.48.1(eslint@9.39.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1)(typescript@5.9.3):
+  bundled-eslint-config@0.7.3(@types/estree@1.0.8)(@typescript-eslint/parser@8.48.1(eslint@9.39.1)(typescript@5.9.3))(@typescript-eslint/utils@8.48.1(eslint@9.39.1)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1)(typescript@5.9.3):
     dependencies:
       '@brettz9/eslint-plugin': 3.0.0(eslint@9.39.1)
       '@eslint/json': 0.14.0
