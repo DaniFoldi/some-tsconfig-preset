@@ -45,7 +45,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "0.5.2",
     "@changesets/cli": "2.29.8",
-    "@types/node": "24.10.4",
+    "@types/node": "24.10.7",
     "@types/prompts": "2.4.9",
     "@types/semver": "7.7.1",
     "bundled-eslint-config": "0.7.3",
