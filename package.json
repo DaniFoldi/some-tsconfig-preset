@@ -48,7 +48,7 @@
     "@types/node": "24.10.7",
     "@types/prompts": "2.4.9",
     "@types/semver": "7.7.1",
-    "bundled-eslint-config": "0.7.3",
+    "bundled-eslint-config": "0.7.8",
     "esbuild": "0.27.2",
     "eslint": "9.39.2",
     "typescript": "5.9.3"
