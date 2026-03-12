@@ -1,5 +1,11 @@
 # some-tsconfig-preset
 
+## 3.0.1
+
+### Patch Changes
+
+- [`4c16ff8`](https://github.com/DaniFoldi/some-tsconfig-preset/commit/4c16ff86411e8ca3c3e7be8bca5c854f971aaf8a) Thanks [@DaniFoldi](https://github.com/DaniFoldi)! - Typescript 6.0 remove deprecated baseUrl
+
 ## 3.0.0
 
 ### Major Changes
