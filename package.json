@@ -51,10 +51,10 @@
     "bundled-eslint-config": "0.7.11",
     "esbuild": "0.27.3",
     "eslint": "9.39.2",
-    "typescript": "6.0.0-beta"
+    "typescript": "6.0.0-dev.20260308"
   },
   "peerDependencies": {
-    "typescript": "^6.0.0-beta"
+    "typescript": "^6.0.0-dev.20260308"
   },
   "packageManager": "pnpm@10.30.1"
 }
